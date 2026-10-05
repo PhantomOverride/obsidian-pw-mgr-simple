@@ -78,7 +78,7 @@ Use this method while the plugin is not yet available in the community catalog, 
 For example, from a directory containing the three downloaded or built assets:
 
 ```sh
-VAULT="$HOME/Documents/labb/labbvalv"
+VAULT="/path/to/your/vault"
 PLUGIN_DIR="$VAULT/.obsidian/plugins/pw-mgr-simple"
 mkdir -p "$PLUGIN_DIR"
 cp main.js manifest.json styles.css "$PLUGIN_DIR/"
@@ -109,11 +109,13 @@ npm run build
 
 ### 2. Link the repository into a test vault
 
-On macOS/Linux, run this **from the repository root**:
+On macOS/Linux, run this **from the repository root**, replacing the placeholder path with your test vault's absolute path:
 
 ```sh
-mkdir -p "$HOME/Documents/labb/labbvalv/.obsidian/plugins"
-ln -s "$(pwd)" "$HOME/Documents/labb/labbvalv/.obsidian/plugins/pw-mgr-simple"
+VAULT="/path/to/your/vault"
+PLUGIN_DIR="$VAULT/.obsidian/plugins/pw-mgr-simple"
+mkdir -p "$VAULT/.obsidian/plugins"
+ln -s "$(pwd)" "$PLUGIN_DIR"
 ```
 
 Replace the example vault path with your own. This makes Obsidian load the bundle and stylesheet directly from your working tree, without copying them after every edit. The link points at the whole repository, not its source directory.
@@ -121,7 +123,7 @@ Replace the example vault path with your own. This makes Obsidian load the bundl
 **The destination must not already exist.** If you previously installed a copy, disable the plugin and move that installation elsewhere before linking. Do not run the command over an existing directory, and do not use a forced overwrite. You can inspect the link with:
 
 ```sh
-ls -ld "$HOME/Documents/labb/labbvalv/.obsidian/plugins/pw-mgr-simple"
+ls -ld "$PLUGIN_DIR"
 ```
 
 Reload Obsidian and enable **Simple Password Plugin** in **Settings → Community plugins**. Prefer a disposable local test vault with dummy credentials. A development symlink exposes the working repository to Obsidian; vault backup/sync tools may handle links differently. Do not use both the copy-install and symlink methods at the same location.
