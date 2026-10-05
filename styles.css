@@ -1,8 +1,128 @@
-/*
+.markdown-source-view.mod-cm6 .cm-embed-block:has(.pw-wrapper):hover {
+  /* The password card already has a border; avoid a second Live Preview frame. */
+  box-shadow: none;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.pw-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 
-If your plugin does not need CSS, delete this file.
+  margin: 10px 0;
+  padding: 10px 12px 14px;
 
-*/
+  border: 1px solid var(--background-modifier-border);
+  border-left: 3px solid var(--interactive-accent);
+  border-radius: 12px;
+  background: var(--background-primary-alt);
+}
+
+.pw-header {
+  display: inline-block;
+  align-self: flex-start;
+
+  padding: 2px 8px;
+  margin: 0;
+
+  border-radius: 999px;
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pwblock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pwrow {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding: 12px 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 14px;
+  background: var(--background-primary-alt);
+}
+
+.pwrow:hover {
+  background: var(--background-secondary);
+}
+
+.pwpill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 18ch;
+  min-width: 18ch;
+  max-width: 18ch;
+
+  padding: 10px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+button.pwpill {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.pwpill-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pwpill-action {
+  flex: 0 0 auto;
+  margin-left: 8px;
+  opacity: 0.75;
+
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+button.pwpill.is-copied .pwpill-action {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.pwmasked {
+  font-family: var(--font-monospace);
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+
+button.pwplaceholder:disabled {
+  justify-content: center;
+  text-align: center;
+  cursor: default;
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+.pwblock-hint {
+  padding: 10px 12px;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+}
