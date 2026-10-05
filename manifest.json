@@ -5,6 +5,6 @@
 	"minAppVersion": "0.15.0",
 	"description": "Implements `pw` code blocks that support username:password credentials.",
 	"author": "PhantomOverride",
-	"authorUrl": "https://github.com/PhantomOverride/asdf",
+	"authorUrl": "https://github.com/PhantomOverride/obsidian-pw-mgr-simple",
 	"isDesktopOnly": true
 }
