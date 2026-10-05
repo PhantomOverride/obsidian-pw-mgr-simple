@@ -2,6 +2,8 @@
 
 Visually hide passwords and quickly copy credentials from your Obsidian notes.
 
+![Password block showing usernames, masked passwords, and copy buttons](img.jpg)
+
 ## TL;DR
 
 Add a `pw` code block, optionally give it a heading, and select a username or masked password to copy it:
